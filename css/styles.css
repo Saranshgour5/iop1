@@ -1,0 +1,71 @@
+#title{
+    background-color: #537FE7;
+    color: white;
+  }
+  
+  body{
+    font-family: 'Montserrat',sans-serif;
+  }
+  h1{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5rem;
+    line-height: 1.5;
+    font-weight: 900;    
+  }
+  h2{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 3.5rem;
+    line-height: 1.5;
+    font-weight: 700;
+    color: #537FE7;
+    text-align: center;
+  }
+  p{
+    font-family: 'Ubuntu';
+    font-size: 1.5rem;
+    color: #000000;
+    text-align: center;
+  }
+  .container-fluid{
+    padding: 3% 15% 5%;
+  }
+/* Title container */
+  .heading-container {
+    display: flex;
+    align-items: center;
+    justify-content: center
+  }
+  
+  .heading-image {
+    flex-basis: 100%;
+    text-align: right;
+  }
+  .heading-text {
+    font-size: 20px;
+    padding-left: 20px;
+    color: #ffffff;
+  }
+ 
+/* overview section */
+#overview{
+    padding: 3% 5%;
+}
+.overview-text{
+    margin: 2px 0px;
+}
+.overview-paragraph{
+    color: #100303;
+    margin-top: 20px;
+    padding: 3% 7%;
+}
+/* perform experiments */
+.experiment-button{
+    text-align: center;
+    margin: 50px auto;
+}
+
+.btn-outline, .btn:hover {
+    background-color: #537FE7;
+}
+
+

@@ -1,0 +1,104 @@
+body{
+    font-family: 'Montserrat',sans-serif;
+}
+h2{
+    font-family: 'Ubuntu',sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    font-weight: 700;
+    color: #537FE7;
+
+    margin-bottom: 15px;
+}
+.navbar {
+    background-color: #537FE7;
+    display: block;
+    text-align: center;
+}
+.navbar a{
+    color: white;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    font-weight: 600;  
+    margin: auto;
+}
+/* side-navbar */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #191825;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    display: flex;
+    align-items: center;
+  }
+  .sidenav li{
+    list-style-type: none;
+  }
+  
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    
+    font-size: 25px;
+    color: #fff;
+    width: 100%;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: #537FE7;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  #main {
+    transition: margin-left .5s;
+    /* padding: 16px; */
+    padding: 0%;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+.toggle-button{
+    color: white;
+    font-size:30px;
+    cursor:pointer;
+    float: left;
+    
+}
+
+
+/* content-writing */
+.experiment-heading{
+  width: 100%;
+  text-align: center;
+}
+.main-content{
+  padding: 16px;
+}
+
+/* next-button */
+/* perform experiments */
+.next-button{
+  text-align: center;
+  margin: 50px auto;
+}
+
+.btn-outline, .btn:hover {
+  background-color: #537FE7;
+}
