@@ -25,7 +25,7 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
     integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
-  <link rel="stylesheet" href="../css/Simulation2.css" />
+  <link rel="stylesheet" href="../css/control-panel.css" />
 </head>
 
 <body>
@@ -39,89 +39,118 @@
     </ul>
   </div>
 
-  <div id="main" class="container-fluid">
-    <nav class="navbar">
-      <span class="toggle-button" onclick="openNav()">&#9776;</span>
-      <a class="navbar-brand" href="../index.html">Applied Instrumentation Simulation Lab</a>
-    </nav>
 
-    <script>
-      function openNav() {
-        document.getElementById("mySidenav").style.width = "250px";
-        document.getElementById("main").style.marginLeft = "250px";
-      }
+  <nav class="navbar">
+    <span class="toggle-button" onclick="openNav()">&#9776;</span>
+    <a class="navbar-brand" href="../index.html">Applied Instrumentation Simulation Lab</a>
+  </nav>
 
-      function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-        document.getElementById("main").style.marginLeft = "0";
-      }
-    </script>
-    <h2 class="experiment-heading">Resistance Temperature Detector</h2>
+  <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+      document.getElementById("main").style.marginLeft = "250px";
+    }
 
-    <div class="main-content">
-      <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-5">
-          <img src="../images/RTD.png" alt="" />
-        </div>
-        <div class="col-md-5">
-          <h2>Control Panel</h2>
-          <div>
-            <p>Material:</p>
-            <div class="dropdown">
-              <button class="btn btn-outline-primary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown button
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </div>
-          </div>
-          <div>
-            <p>R <sub>o</sub>:</p>
-            <div class="dropdown">
-              <button class="btn btn-outline-primary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown button
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </div>
-          </div>
-          <div class="my-button">
-            <a href="" class="btn btn-outline-primary btn-lg proceed-button" role="button" aria-pressed="true">Get Temperature</a>
-          </div>
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+      document.getElementById("main").style.marginLeft = "0";
+    }
+  </script>
+  <div id="main" class="container-fluid"></div>
+  <h2 class="experiment-heading">Resistance Temperature Detector</h2>
 
-          <div class="my-button">
-            <a href="" class="btn btn-outline-primary btn-lg proceed-button" role="button" aria-pressed="true">Formula</a>
-          </div>
-          <div>
-            <p>Enter Output R <sub>t</sub> value: </p>
-            <div class="form-group">
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
-            </div>
-          </div>
-          <div class="my-button">
-            <a href="" class="btn btn-outline-primary btn-lg proceed-button" role="button" aria-pressed="true">Next Set Value</a>
-          </div>
-
-          <div class="my-button">
-            <a href="" class="btn btn-outline-primary btn-lg proceed-button" role="button" aria-pressed="true">Plot</a>
-          </div>
-          <div class="my-button">
-            <a href="" class="btn btn-outline-primary btn-lg proceed-button" role="button" aria-pressed="true">Submit</a>
-          </div>
-    
-        </div>
-      </div>
+  <div class="main-content">
+    <div class="row">
       <div class="col-md-1"></div>
+      <div class="col-md-5">
+        <img src="../images/RTD.png" alt="" />
+      </div>
+      <div class="col-md-5">
+        <h2>Control Panel</h2>
+        <div class="row-panel">
+          <p class="row-text">Material:</p>
+          <div class="dropdown btn-group">
+            <button class="btn btn-outline-primary btn-lg dropdown-toggle " type="button" id="dropdownMenuButton"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown button
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Platinum</a>
+              <a class="dropdown-item" href="#">Copper</a>
+              <a class="dropdown-item" href="#">Nickel</a>
+              <a class="dropdown-item" href="#">Balco</a>
+            </div>
+            
+            
+            
+
+
+          </div>
+        </div>
+        <input readonly type="textf" id="" class="data-display-box">
+        <input readonly type="textf" id="" class="data-display-box">
+
+        <div class="row-panel">
+          <p class="row-text">R <sub>o</sub>:</p>
+          <div class="dropdown btn-group">
+            <button class="btn btn-outline-primary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown button
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">100</a>
+              <a class="dropdown-item" href="#">200</a>
+              <a class="dropdown-item" href="#">300</a>
+              <a class="dropdown-item" href="#">400</a>
+              <a class="dropdown-item" href="#">500</a>
+
+            </div>
+
+          </div>
+          <script>
+            $(".dropdown-menu a").click(function(){
+            var selText = $(this).text();
+            $(this).parents('.btn-group').find('.dropdown-toggle').html(selText);
+            });
+          </script>
+        </div>
+
+        <div class="row-panel">
+          <div class="row-text">
+            <a href="" class="btn btn-outline-primary btn-lg  my-button" role="button" aria-pressed="true">Get
+              Temperature</a>
+          </div>
+          <input readonly type="textf" id="" class="data-display-box">
+        </div>
+
+
+        <div class="formula-row">
+          <a href="" id="formula-button" class=" btn btn-outline-dark btn-lg  " role="button"
+            aria-pressed="true">Formula</a>
+        </div>
+        <div class="row-panel">
+          <p>Enter Output R <sub>t</sub> value: </p>
+          <div class="form-group">
+            <input class="form-control" id="exampleFormControlTextarea1" rows="1"></input>
+
+          </div>
+        </div>
+        <div class=" last-row">
+
+
+          <a href="" class="btn btn-outline-primary btn-lg " role="button" aria-pressed="true">Plot</a>
+
+
+          <a href="" class="btn btn-outline-primary btn-lg " role="button" aria-pressed="true">Submit</a>
+
+
+        </div>
+
+
+      </div>
     </div>
+    <div class="col-md-1"></div>
+  </div>
   </div>
 </body>
 
