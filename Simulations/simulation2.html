@@ -74,13 +74,13 @@
         <img src="../images/RTD.png" alt="" />
       </div>
       <div class="col-md-5">
-        <h2>Control Panel</h2>
+        <h2 style="color: black;">Control Panel</h2>
 
         <!-- Dropdown -->
         <div class="row-panel">
           <p class="row-text">Material:</p>
           <div class="dropdown btn-group">
-            <select id="Mate" class="btn btn-dark">
+            <select id="material" class="btn btn-dark" onchange="return myFunction();">
               <option value="Select">-- Select-- </option>
               <option value="Platinum">Platinum</option>
               <option value="Copper">Copper</option>
@@ -91,10 +91,9 @@
         </div>
 
         <!-- alpha-value and temperature range -->
-        <div>
-
+        <div id="alpha-value" class="text-prompt-box">
         </div>
-        <div>
+        <div id="temperature-range" class="text-prompt-box">
 
         </div>
         
@@ -125,14 +124,14 @@
         <div class="row-panel">
           <p>Enter Output R <sub>t</sub> value: </p>
           <div class="form-group">
-            <input tpye="text" id="inputcalculatevalue">
+            <input class="form" tpye="text" id="calculated-value">
           </div>
         </div>
-        <div id="pmate" >
+        <div id="pmate" class="text-prompt-box">
 
         </div>
         <div class=" last-row">
-          <button name="Next Set Value" type="button" onclick="sendvalue()" class="btn btn-info">Next set value</button>
+          <button name="Next Set Value" type="button" onclick="getTemperature()" class="btn btn-info">Next set value</button>
           <button name="Plot" type="button" onclick="sendvalue()" class="btn btn-info">Plot</button>
           <button name="submit" type="button" onclick="checkvalue()" class="btn btn-info">Submit</button>
         </div>
@@ -148,14 +147,39 @@
     let alpha
     var array1=[];
     var array2=[]; 
+
+    function myFunction() {
+    var ele = document.getElementById("material");
+    var selectedValue = ele.options[ele.selectedIndex].value;
+
+    var x=document.getElementById("temperature-range");
+    var y = document.getElementById("alpha-value");
+    if(selectedValue=="Platinum"){
+       y.innerHTML = "&#945: 0.00385";
+       x.innerHTML=" Temperature range: -200 to 800 &#x2103";
+    }
+    else if(selectedValue=="Copper"){
+      y.innerHTML = "&#945: 0.00427";
+      x.innerHTML=" Temperature range: -100 to 260 &#x2103";
+    }
+    else if(selectedValue=="Nickel"){
+      y.innerHTML = "&#945: 0.00672";
+      x.innerHTML=" Temperature range: -100 to 260 &#x2103";
+    }
+    else if(selectedValue=="Balco"){
+      y.innerHTML = "&#945: 0.00518";
+      x.innerHTML=" Temperature range: -100 to 204 &#x2103";
+    }
+}
     function Start() {
       window.alert("Equation For Calculating Rt\nRt = R0 (1 + α * ΔT)\nWhere\nRt is resistance at measurement temperature\nR0 is resistance at reference (0°C) temperature\nα is temperature co-efficient of material\nΔT is the difference between measurement and reference temperature")
     }
     function getTemperature() {
+      document.getElementById("calculated-value").value="";
       let ltemp
       let utemp
       let tempf
-      let selectdrp1 = document.getElementById("Mate")
+      let selectdrp1 = document.getElementById("material")
       let material = selectdrp1.options[selectdrp1.selectedIndex].text;
       if (material == "Platinum") {
         ltemp = -200
@@ -188,7 +212,7 @@
       let selectdrop2 = document.getElementById("R0")
       let rnot = selectdrop2.options[selectdrop2.selectedIndex].value
       let rtnot = rnot * (1 + alpha * gttemp)
-      let rinput = document.getElementById("inputcalculatevalue").value
+      let rinput = document.getElementById("calculated-value").value
       if (rinput >= (rtnot - 0.5) && rinput <= (rtnot + 0.5))
       {
         document.getElementById("pmate").innerHTML = "Your result is correct";

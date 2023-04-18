@@ -119,7 +119,11 @@ input{
   margin-right: auto;
   margin-bottom: 0;
 }
-
+.text-prompt-box{
+  text-align: center;
+  font-family: 'Montserrat',sans-serif;
+  font-size: 1.3rem;
+}
 .data-display-box{
   width: 50%;
   border-style: none;

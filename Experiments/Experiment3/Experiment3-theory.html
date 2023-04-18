@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulation Labs</title>
+    <link rel="icon" type="image/x-icon" href="../../images/lightbulb-solid.svg">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Font awesome -->
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
+        integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/dcc924776f.js" crossorigin="anonymous"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../css/Page3.css">
+</head>
+
+<body>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <ul>
+            <li> <a href="Experiment3.html">Overview</a></li>
+            <li> <a href="Experiment3-theory.html">Theory</a></li>
+            <li> <a href="../../Simulations/simulation3.html">Simulation</a></li>
+            <li> <a href="#">Conclusion</a></li>
+        </ul>
+    </div>
+
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+        }
+    </script>
+    <div id="main" class="container-fluid">
+        <nav class="navbar ">
+            <span class="toggle-button" onclick="openNav()">&#9776;</span>
+            <a class="navbar-brand" href="../../index.html">Applied Instrumentation Simulation Lab</a>
+        </nav>
+        <h2 class="experiment-heading">Measurement of level in a tank using capacitive type level probe</h2>
+
+        <div class="main-content">
+            <h2>Prerequisite</h2>
+            <p>
+                Before performing this experiment, student must have knowledge about:
+            <ol>
+                <li>Working of a typical Capacitor.</li>
+                <li>Types of Capacitors.</li>
+                <li>Effect of various factors that affect the output of a capacitor e.g. temperature, dielectric
+                    constant of insulator used, distance between the plates, are of the plates used, etc..</li>
+
+            </ol>
+            </p>
+            <h2>Level measurements</h2>
+            </li>
+            </ol>
+            <p>In industry, liquids such as water, chemicals, and solvents are used in various processes. The amount of
+                such liquid stored can be found by measuring level of the liquid in a container or vessel. The level
+                affects not only the quantity delivered but also pressure and rate of flow in and out of the container.
+                Level sensors detect the level of substances like liquids, slurries, granular materials, and powders.
+                The substance to be measured can be inside a container or can be in its natural form (e.g. a river or a
+                lake). The level measurement can be either continuous or point values.</p>
+            <p><strong>Continuous level sensors</strong> measure the level to determine the exact amount of substance in
+                a continuous manner.</p>
+            <p><strong>Point-level sensors</strong> indicate whether the substance is above or below the sensing point.
+                This is essential to avoid overflow or emptying of tanks and to protect pumps from dry run.</p>
+            <p>The selection criteria for level sensor include:</p>
+            <ul>
+                <li>
+                    The physical phase (liquid, solid or slurry)
+                </li>
+                <li>
+                    Temperature
+                </li>
+                <li>
+                    Pressure or vacuum
+                </li>
+                <li>
+                    Chemistry
+                </li>
+                <li>
+                    Dielectric constant of medium
+                </li>
+                <li>
+                    Density (specific gravity) of medium
+                </li>
+                <li>
+                    Agitation (action)
+                </li>
+                <li>
+                    Acoustical or electrical noise
+                </li>
+                <li>
+                    Vibration
+                </li>
+                <li>
+                    Mechanical shock
+                </li>
+                <li>
+                    Tank or bin size and shape
+                    
+                </li>
+            </ul>
+            <p>From the application point of view the considerations are :</p>
+            <ul>
+                <li>Price</li>
+                <li>Accuracy</li>
+                <li>Response rate</li>
+                <li>Ease of calibration</li>
+                <li>Physical size and mounting of the instrument </li>
+                <li>Monitoring or control of continuous or discrete levels</li>
+            </ul>
+            <p> Level measurements are broadly classified in two groups:</p>
+            <ul>
+                <li>Direct methods</li>
+                <li>Indirect methods</li>
+            </ul>
+            <p><strong>In direct methods</strong>, the level is indicated directly by means of simple mechanical
+                devices. The measurement is not affected by changes in material density. Few examples are:</p>
+            <ul>
+                <li>Dip Stick</li>
+                <li>Resistance Tapes</li>
+                <li>Sight Glass</li>
+                <li>Floats</li>
+                <li>Ultrasonic </li>
+                <li>Radar</li>
+            </ul>
+            <p><strong>In Indirect methods</strong>, the level is converted in a measurable signal using a suitable
+                transducer. Change in the material affects the measurement. A corrective factor must be used in
+                recalibrating the instrument. Few examples are:</p>
+            <ul>
+                <li>Hydrostatic head methods</li>
+                <li>Load cell</li>
+                <li>Capacitance</li>
+                <li>Conductivity</li>
+            </ul>
+            <p><em>Capacitance Level Measurement:</em>
+                Capacitive level transducer is an example of indirect measurement of level</p>
+            <div class="center-content"><img src="../../images/Capacitive-Level-Measurement.png" alt=""></div>
+          
+
+            <p>Capacitance level sensors are used for wide variety of solids, aqueous and organic liquids, and slurries.
+                The technique is frequently referred as RF as radio frequency signals applied to the capacitance
+                circuit. The sensors can be designed to sense material with dielectric constants as low as 1.1 (coke and
+                fly ash) and as high as 88 (water) or more. Sludges and slurries such as dehydrated cake and sewage
+                slurry (dielectric constant approx. 50) and liquid chemicals such as quicklime (dielectric constant
+                approx. 90) can also be sensed. Dual-probe capacitance level sensors can also be used to sense the
+                interface between two immiscible liquids with substantially different dielectric constants.</p>
+            <p>Since capacitance level sensors are electronic devices, phase modulation and the use of higher
+                frequencies makes the sensor suitable for applications in which dielectric constants are similar.</p>
+            <p><strong>Working Principle:</strong>
+                The principle of capacitive level measurement is based on change of capacitance. An insulated electrode
+                acts as one plate of capacitor and the tank wall (or reference electrode in a non-metallic vessel) acts
+                as the other plate. The capacitance depends on the fluid level. An empty tank has a lower capacitance
+                while a filled tank has a higher capacitance.
+                A simple capacitor consists of two electrode plate separated by a small thickness of an insulator such
+                as solid, liquid, gas, or vacuum. This insulator is also called as dielectric. Value of C depends on
+                dielectric used, area of the plate and also distance between the plates.</p>
+            <pre><code>      C = E (K A/d)                                            
+          </code></pre>
+            <p>Where:
+                C = capacitance in picofarads (pF)
+                E = a constant known as the absolute permittivity of free space
+                K = relative dielectric constant of the insulating material
+                A = effective area of the conductors
+                d = distance between the conductors
+                This change in capacitance can be measured using AC bridge.</p>
+            <p><strong>Measurement:</strong>
+                Measurement is made by applying an RF signal between the conductive probe and the vessel wall. The RF
+                signal results in a very low current flow through the dielectric process material in the tank from the
+                probe to the vessel wall. When the level in the tank drops, the dielectric constant drops causing a drop
+                in the capacitance reading and a minute drop in current flow. This change is detected by the level
+                switch's internal circuitry and translated into a change in the relay state of the level switch in case
+                of point level detection. In the case of continuous level detectors, the output is not a relay state,
+                but a scaled analog signal.</p>
+            <p> Level Measurement can be divided into three categories:</p>
+            <ul>
+                <li>Measurement of non-conductive material</li>
+                <li>Measurement of conductive material</li>
+                <li>Non-contact measurement</li>
+            </ul>
+            <p><strong>Non-conducting material:</strong>
+                For measuring level of non conducting liquids, bare probe arrangement is used as liquid resistance is
+                sufficiently high to make it dielectric. Since the electrode and tank are fixed in place, the distance
+                (d) is constant, capacitance is directly proportional to the level of the material acting as dielectric.
+            </p>
+            <p><strong>Conducting Material:</strong>
+                In conducting liquids, the probe plates are insulated using thin coating of glass or plastic to avoid
+                short circuiting. The conductive material acts as the ground plate of the capacitor.</p>
+            <p>Proximity measurements (Non-contact type measurements):
+                In Proximity level measurement is the area of the capacitance plates is fixed, but distance between
+                plates varies. Proximity level measurement does not produce a linear output and are used when the level
+                varies by several inches.</p>
+            
+                    <h2>Advantages of Capacitive level
+                        measurement:</h2>
+            <ol>
+                <li> Relatively inexpensive</li>
+                <li> Versatile</li>
+                <li> Reliable</li>
+                <li> Requires minimal maintenance</li>
+                <li> Contains no moving parts</li>
+                <li> Easy to install and can be adapted easily for different size of vessels</li>
+                <li> Good range of measurement, from few cm to about 100 m</li>
+                <li> Rugged</li>
+                <li> Simple to use</li>
+                <li> Easy to clean</li>
+                <li> Can be designed for high temperature and pressure applications.</li>
+            </ol>
+            <h2>Applications</h2>
+            <p>Capacitance Level Probes are used for measuring level of</p>
+            <ul>
+                <li>Liquids</li>
+                <li>Powered and granular solids</li>
+                <li>liquid metals at very high temperature</li>
+                <li>Liquefied gases at very low temperature</li>
+                <li>Corrosive materials like hydrofluoric acid</li>
+                <li>Very high pressure industrial processes.</li>
+            </ul>
+            <h2>Disadvantages:</h2>
+            <p>Light density materials under 20 lb/ft3 and materials with particle sizes exceeding 1/2 in. in diameter
+                can be a problem due to their very low dielectric constants (caused by the large amount of air space
+                between particles).</p>
+
+
+            <div class="next-button">
+                <a href="../../Simulations/simulation3.html" class="btn btn-outline-primary btn-lg proceed-button"
+                    role="button" aria-pressed="true">Next</a>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

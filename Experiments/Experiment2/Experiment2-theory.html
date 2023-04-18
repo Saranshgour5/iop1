@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulation Labs</title>
+    <link rel="icon" type="image/x-icon" href="../../images/lightbulb-solid.svg">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Font awesome -->
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
+        integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/dcc924776f.js" crossorigin="anonymous"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../css/Page3.css">
+</head>
+
+<body>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <ul>
+            <li> <a href="Experiment2.html">Overview</a></li>
+            <li> <a href="Experiment2-theory.html">Theory</a></li>
+            <li> <a href="../../Simulations/simulation2.html">Simulation</a></li>
+            <li> <a href="#">Conclusion</a></li>
+        </ul>
+    </div>
+
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+        }
+    </script>
+    <div id="main" class="container-fluid">
+        <nav class="navbar ">
+            <span class="toggle-button" onclick="openNav()">&#9776;</span>
+            <a class="navbar-brand" href="../../index.html">Applied Instrumentation Simulation Lab</a>
+        </nav>
+        <h2 class="experiment-heading">Characaterize The RTD</h2>
+
+        <div class="main-content">
+            <h2>Prerequisite</h2>
+            <p>
+                Before performing the practical on RTD one must be well versed with:
+            <ol>
+                <li>Importance of temperature measurement.</li>
+                <li>Various units of temperature measurement and conversion of one unit to another.</li>
+                <li>Knowledge of various methods of temperature measurement.</li>
+                <li>Meaning of terms like process lag, positive and negative temperature coefficient, negative
+                    temperature, virtual temperature, etc.</li>
+                <li>Knowledge of active and passive transducers.</li>
+            </ol>
+            </p>
+            <h2>Temperature</h2>
+            <p>Temperature is a measure of the average heat or thermal energy of the particles in a substance. Since it
+                is an average measurement, it does not depend on the number of particles in an object. In that sense it
+                does not depend on the size of it. For example, the temperature of a small cup of boiling water is the
+                same as the temperature of a large pot of boiling water. Even if the large pot is much bigger than the
+                cup and has millions and millions more water molecules. The basic unit of temperature (T) in the
+                International System of Units (SI) is the Kelvin (K). The commonly used other units of temperature are
+                Degree Celsius (°C) and Degree Fahrenheit (°F).</p>
+            <h2>Electrical Resistance:</h2>
+            <p>The electrical resistance of an object is a measure of its opposition to the flow of an electric current.
+                For a wide range of materials and conditions, the electrical resistance does not depend on the amount of
+                current through or the potential difference (voltage) across the object. That means the resistance R is
+                constants for the given temperature and material. Therefore, the resistance of an object can be defined
+                as the ratio of voltage to current, in accordance with
+            </p>
+            <blockquote>Ohm's Law: R=V/I</blockquote>
+            The unit of resistance is ohm (Ω).
+            <h2>Temperature Measurement Using RTD</h2>
+            <p>For measurement of Temperature number of sensors are available. One of the most linear, stable, and
+                reproducible temperature sensors is the RTD, Resistance Temperature Detector. In RTD, the output
+                resistance changes with temperature. RTD is a positive temperature coefficient device. The resistance of
+                the metal increases with temperature. The resistive property of the metal is called its resistivity. The
+                resistive property defines length and cross sectional area required to fabricate an RTD of a given
+                value. The resistance is proportional to length and inversely proportional to the cross sectional area
+                and is given by the relationship
+
+            <blockquote> R = ρl/A</blockquote>
+            Where 'R' is resistance of the metal, 'ρ' is the resistivity of the metal, 'l' is the length of the metal
+            and 'A' is the area of cross section of the metal.
+            </p>
+            <div class="center-content">
+                <img src="../../images/Resistivity.jpg" style="text-align: center;" alt="">
+            </div>
+            <h2>Resistance Temperature Detector (RTD)</h2>
+            <p>Resistance Temperature Detector (RTD), as the name implies, is a sensor used to measure temperature by
+                correlating the resistance with temperature. Most RTD elements consist of a length of fine coiled wire
+                wrapped around a ceramic or glass core. The element is usually quite fragile, so it is often placed
+                inside a sheathed probe to protect it. The RTD element is made from a pure metals as mentioned below.
+                The material property to have predictable change in resistance as the temperature changes, is used to
+                determine temperature.</p>
+
+            <p>Commonly used RTD Materials:</p>
+
+            <ul>
+                <li>Platinum (most popular and accurate)</li>
+                <li>Nickel</li>
+                <li>Copper</li>
+                <li>Balco (rare)</li>
+                <li>Tungsten (rare)</li>
+            </ul>
+
+            <h2>Temperature Calcualtions</h2>
+            <p>RTDs are manufactured from metals whose resistance increases with temperature. Within a limited
+                temperature range, its resistance increases linearly with temperature: Rt = R0[1+ α (t-t0)]</p>
+            <p>Where: Rt = resistance at temperature 't'</p>
+            <p>R0 = resistance at a reference temperature ( Generally 0 degree °C)</p>
+            <p>α = temperature coefficient of resistance (°C )
+
+            </p>
+            <p>Setting t0 to 0°C and rearranging to the standard linear y = m*x+b form, it is clear that resistance vs.
+                temperature is linear with a slope equal to</p>
+            <blockquote> R / R0 = α*t + 1 </blockquote>
+            <div class="center-content">
+                <img src="../../images/RTD charcterstics.png" alt="">
+            </div>
+            <p>Theoretically, any metal can be used to measure temperature. The metal selected should have a high
+                melting point and an ability to withstand the effects of corrosion. Therefore Platinum is selected for
+                most of the applications. Its desirable characteristics include chemical stability, availability in a
+                pure form, and electrical properties that are highly reproducible.</p>
+            <p>Solving Equation (1) for α:
+                α = (R<sub>100</sub>- R<sub>o</sub>) /( R<sub>o</sub> *(t-t<sub>o</sub>))<br>Where,</p>
+            <p>t = 100°C &amp; t<sub>o</sub> = 0°C</p>
+            <p>For platinum, α = 0.00385 Ω/Ω/°C </p>
+            <p>The relationship between resistance and temperature of RTD can be approximated by the <b>Callendar-Van Dusen equation</b> 
+                 which is given by,</p>
+            <pre><code>   R<sub>t</sub>/R<sub>o</sub> = 1+ α [ t – δ((t/100)-1)(t/100) –β((t/100)-1)(t/100)<sup>3</sup>]                     
+           </code></pre>
+            <p>Where,</p>
+            <p>t = temperature (°C) <br>Rt = Resistance at temperature, t°C <br>R0 = Resistance at 0°C <br>α = Constant
+                ( 0.00385Ω/Ω/°C )</p>
+            <p>δ &amp; β are Linearization coefficients, where β = 0 for t &gt; 0°C</p>
+            <p>The <b>Callendar Van Dusen Equation</b>  is used in the standard IEC 751 which is the most popular standard used
+                for RTD. The equation for RTD given in IEC 751 is:</p>
+            <pre><code>      Rt = R0 [1+ At+ Bt2 +C(t-100)t <sup>3</sup> ]                                            
+           </code></pre>
+            <p>Where,
+                A,B,C are constants and C = 0 for t &gt; 0°C.</p>
+            <p>The values of A,B and C for α = 0.00385 are <br>A = 3.9083<em>10-3°C‾ <sup>1</sup> <br>B = -5.775</em>10-7°C‾<sup>2</sup> <br>C
+                = -4.183*10-12°C‾<sup>4</sup> </p>
+            <p>Platinum RTDs are defined by standards such as DIN 43760 (BS1904), IEC 751-1983, and JIS C1604.</p>
+            <h2>RTD Materials</h2>
+            <p>The criterions for selecting a material for an RTD:</p>
+            <ul>
+                <li>
+                    Malleability to form small wires
+                </li>
+                <li>
+                    Linear relationship of resistance and temperature
+                </li>
+                <li>
+                    Repeatability and stability
+                </li>
+                <li>
+                    Corrosion
+                </li>
+                <li>
+                    Low cost
+                </li>
+                <li>
+                    Easy availability
+                </li>
+            </ul>
+            <h2>RTD Performance Specifications:</h2>
+            <ol>
+                <li>
+                   <b>Temperature Coefficient :</b> It is the change in resistance of the material per degree change in
+                        temperature. This value should be as high as possible to give higher accuracy of temperature
+                        measurement.
+                    <div class="center-content">
+                        <img src="../../images/RTD-curves.png" alt="">
+                    </div>
+                </li>
+                <li>
+                    <b> Accuracy:</b>It is the comparison of measurement with standard results.That is how good the data
+                    is
+                    when compared with a recognized standard. The accuracy of a measurement system is the degree of
+                    closeness of measurements of a quantity to its actual (true) value.
+                </li>
+                <li>
+                    <b>Stability:</b> It is the measurement of drift over time. Stability is affected by sensor design.
+                    Well
+                    designed, high quality sensor will have less drift while high vibration, mechanical wear and
+                    tear and thermal shock will degrade the stability.
+                </li>
+                <li>
+                    <b>Interchangeability:</b> Interchangeability is the measure of change in base tolerance and
+                    temperature
+                    coefficient from sensor to sensor. This is important when replacing a sensor, to insure that the
+                    system retains its performance characteristics without any need for re-calibration.
+                </li>
+                <li>
+                    <b>Response time:</b> Response time is time the sensor takes to react to temperature changes in a
+                    process.
+                </li>
+            </ol>
+            <h2>Factors that influence the sensor response</h2>
+            <ul>
+                <li>Thermal lag when combined with the thermowell </li>
+                <li>Immersion length </li>
+                <li>Flow velocity of the process fluid </li>
+                <li>Process fluid transients </li>
+                <li>Fluid boundary or film on sensing surface </li>
+                <li>Influences from wall or vessel </li>
+                <li>Environmental factors</li>
+                <li><b>Insulation resistance:</b> It is the largest cause of errors and failure of RTD. The causes can
+                    be an
+                    inadequate seal, high humidity environment, or a failed seal. In some cases baking the RTD
+                    assembly will increase the insulation resistance and recover the RTD.</li>
+                <li><b>Self heating: </b>
+                    The very small cross-sectional areas in the sensing elements will tend to heat when
+                    electrical current is applied. Most RTDs are specified to be operated with a current of 1
+                    milliampere or less.
+                </li>
+            </ul>
+
+            <div class="next-button">
+                <a href="../../Simulations/simulation2.html" class="btn btn-outline-primary btn-lg proceed-button" role="button"
+                    aria-pressed="true">Next</a>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
