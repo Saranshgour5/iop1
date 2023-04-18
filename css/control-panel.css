@@ -13,11 +13,16 @@ h2{
 }
 p{
     font-family: 'Ubuntu';
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: #000000;
     width: fit-content;
     margin: 0;
 }
+input{
+  font-size: 1.3rem;
+  font-family: 'Ubuntu',sans-serif;
+}
+
 .navbar {
     background-color: #537FE7;
     display: block;
@@ -71,11 +76,10 @@ p{
     margin-left: 50px;
   }
   
-  #main {
+  /* #main {
     transition: margin-left .5s;
-    /* padding: 16px; */
     padding: 0%;
-  }
+  } */
   
   @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
@@ -92,20 +96,16 @@ p{
     
 }
 
-.experiment-heading{
-    width: 100%;
-    text-align: center;
-}
 /* panel */
 .col-md-5{
-    border-style: dashed;
+    border-style: outset;
     border-width: medium; 
     margin: 2px;
     text-align: center;
 }
-.dropdown{
+/* .dropdown{
     width: fit-content;
-}
+} */
 .row-panel{
     display:-webkit-flex;
     display:flex;
@@ -125,28 +125,30 @@ p{
   border-style: none;
   outline: none;
   background-color: transparent;
+  margin-bottom: 2px;
 
 }
 
 .formula-row{
-
   text-align: center;
   margin-bottom: 10px;
 }
-#formula-button:hover{
-  background-color: black;
-}
 
+.btn{
+  font-size: 1.3rem;
+  font-family: 'Montserrat',sans-serif;
+  
+}
 .btn-outline, .btn:hover {
   width: fit-content;
   text-align: center;
-  background-color: #537FE7;
 }
 
 .last-row{
-
-
     width: 100%;
     margin-bottom: 10px;
     text-align: center;
+}
+.last-row .btn{
+  margin: 0 5px;
 }

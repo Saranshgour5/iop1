@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <title>Resistance Temperature Detector</title>
-
+  <link rel="icon" type="image/x-icon" href="../images/lightbulb-solid.svg">
+  <!-- Bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
 
@@ -18,17 +19,24 @@
     integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
     crossorigin="anonymous"></script>
 
+  <!-- Font-Awesome -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <script src="https://kit.fontawesome.com/dcc924776f.js" crossorigin="anonymous"></script>
 
+  <!-- Js-Plumb -->
   <script src="../node_modules/jsplumb/dist/js/jsplumb.min.js"></script>
 
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
     integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+
+  <!-- CSS -->
   <link rel="stylesheet" href="../css/control-panel.css" />
+ 
 </head>
 
 <body>
+  <!-- Sidenav-Bar -->
   <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <ul>
@@ -56,7 +64,7 @@
       document.getElementById("main").style.marginLeft = "0";
     }
   </script>
-  <div id="main" class="container-fluid"></div>
+
   <h2 class="experiment-heading">Resistance Temperature Detector</h2>
 
   <div class="main-content">
@@ -67,83 +75,66 @@
       </div>
       <div class="col-md-5">
         <h2>Control Panel</h2>
+
+        <!-- Dropdown -->
         <div class="row-panel">
           <p class="row-text">Material:</p>
           <div class="dropdown btn-group">
-            <button class="btn btn-outline-primary btn-lg dropdown-toggle " type="button" id="dropdownMenuButton"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dropdown button
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">Platinum</a>
-              <a class="dropdown-item" href="#">Copper</a>
-              <a class="dropdown-item" href="#">Nickel</a>
-              <a class="dropdown-item" href="#">Balco</a>
-            </div>
-            
-            
-            
-
-
+            <select id="Mate" class="btn btn-dark">
+              <option value="Select">-- Select-- </option>
+              <option value="Platinum">Platinum</option>
+              <option value="Copper">Copper</option>
+              <option value="Nickel">Nickel</option>
+              <option value="Balco">Balco</option>
+            </select>
           </div>
         </div>
-        <input readonly type="textf" id="" class="data-display-box">
-        <input readonly type="textf" id="" class="data-display-box">
 
+        <!-- alpha-value and temperature range -->
+        <div>
+
+        </div>
+        <div>
+
+        </div>
+        
+        <!-- Dropdown -->
         <div class="row-panel">
           <p class="row-text">R <sub>o</sub>:</p>
-          <div class="dropdown btn-group">
-            <button class="btn btn-outline-primary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dropdown button
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">100</a>
-              <a class="dropdown-item" href="#">200</a>
-              <a class="dropdown-item" href="#">300</a>
-              <a class="dropdown-item" href="#">400</a>
-              <a class="dropdown-item" href="#">500</a>
-
-            </div>
-
-          </div>
-          <script>
-            $(".dropdown-menu a").click(function(){
-            var selText = $(this).text();
-            $(this).parents('.btn-group').find('.dropdown-toggle').html(selText);
-            });
-          </script>
+          <select id="R0" class="btn btn-dark">
+            <option value="">-- Select -- </option>
+            <option value="100">100</option>
+            <option value="200">200</option>
+            <option value="300">300</option>
+            <option value="500">500</option>
+          </select>
         </div>
-
+        
+        <!-- Get-temperature-row -->
         <div class="row-panel">
           <div class="row-text">
-            <a href="" class="btn btn-outline-primary btn-lg  my-button" role="button" aria-pressed="true">Get
-              Temperature</a>
+            <button name="data" type="button" onclick="getTemperature()" class="btn btn-success">Get temperature</button>
           </div>
-          <input readonly type="textf" id="" class="data-display-box">
+          <input readonly type="textf" id="ptemp" class="data-display-box">
         </div>
 
 
         <div class="formula-row">
-          <a href="" id="formula-button" class=" btn btn-outline-dark btn-lg  " role="button"
-            aria-pressed="true">Formula</a>
+          <button name="formula" type="button" onclick="Start()" class="btn btn-dark">Formula</button>
         </div>
         <div class="row-panel">
           <p>Enter Output R <sub>t</sub> value: </p>
           <div class="form-group">
-            <input class="form-control" id="exampleFormControlTextarea1" rows="1"></input>
-
+            <input tpye="text" id="inputcalculatevalue">
           </div>
         </div>
+        <div id="pmate" >
+
+        </div>
         <div class=" last-row">
-
-
-          <a href="" class="btn btn-outline-primary btn-lg " role="button" aria-pressed="true">Plot</a>
-
-
-          <a href="" class="btn btn-outline-primary btn-lg " role="button" aria-pressed="true">Submit</a>
-
-
+          <button name="Next Set Value" type="button" onclick="sendvalue()" class="btn btn-info">Next set value</button>
+          <button name="Plot" type="button" onclick="sendvalue()" class="btn btn-info">Plot</button>
+          <button name="submit" type="button" onclick="checkvalue()" class="btn btn-info">Submit</button>
         </div>
 
 
@@ -152,6 +143,73 @@
     <div class="col-md-1"></div>
   </div>
   </div>
+  <script>
+    let gttemp
+    let alpha
+    var array1=[];
+    var array2=[]; 
+    function Start() {
+      window.alert("Equation For Calculating Rt\nRt = R0 (1 + α * ΔT)\nWhere\nRt is resistance at measurement temperature\nR0 is resistance at reference (0°C) temperature\nα is temperature co-efficient of material\nΔT is the difference between measurement and reference temperature")
+    }
+    function getTemperature() {
+      let ltemp
+      let utemp
+      let tempf
+      let selectdrp1 = document.getElementById("Mate")
+      let material = selectdrp1.options[selectdrp1.selectedIndex].text;
+      if (material == "Platinum") {
+        ltemp = -200
+        utemp = 800
+        alpha = 0.00385
+      }
+      if (material == "Copper") {
+        ltemp = -100
+        utemp = 260
+        alpha = 0.00427
+      }
+      if (material == "Nickel") {
+        ltemp = -100
+        utemp = 260
+        alpha = 0.00672
+      }
+      if (material == "Balco") {
+        ltemp = -100
+        utemp = 204
+        alpha = 0.00518
+      }
+
+      tempf = Math.ceil(Math.random() * (utemp - ltemp) + ltemp);
+      document.getElementById("ptemp").value = tempf
+      gttemp = tempf
+    }
+
+
+    function checkvalue() {
+      let selectdrop2 = document.getElementById("R0")
+      let rnot = selectdrop2.options[selectdrop2.selectedIndex].value
+      let rtnot = rnot * (1 + alpha * gttemp)
+      let rinput = document.getElementById("inputcalculatevalue").value
+      if (rinput >= (rtnot - 0.5) && rinput <= (rtnot + 0.5))
+      {
+        document.getElementById("pmate").innerHTML = "Your result is correct";
+        array1.push(rinput);
+        array2.push(gttemp);
+      }
+      else {
+        document.getElementById("pmate").innerHTML = "Try again, your result is incorrect";
+      }
+
+    }
+    function sendvalue(){
+      sessionStorage.setItem('TheArray',array1);
+      window.location.href='../charts/simulation2-chart.html';
+
+      sessionStorage.setItem('TheArray2',array2);
+      window.location.href='../charts/simulation2-chart.html';
+
+    }
+  </script>
+
 </body>
 
 </html>
